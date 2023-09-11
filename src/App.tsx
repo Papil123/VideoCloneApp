@@ -2,7 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-import ThumbnailPage from './Components/ThumbnailPage'
+import ThumbnailPage from './Pages/ThumbnailPage'
 
 function App() {
   // const [count, setCount] = useState(0)

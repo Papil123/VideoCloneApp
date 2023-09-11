@@ -2,8 +2,9 @@ import  { useEffect, useState ,useRef } from 'react';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import image from "../assets/header.png"
+import VideoThumbnail from '../Components/VideoThumbnailPage';
 
-interface Video {
+export interface Video {
   postId: string;
   creator: {
     name: string;
@@ -164,34 +165,35 @@ function ThumbnailPage() {
 
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6">
   {videos.map((video) => (
-    <div
-      key={video.postId}
-      onClick={() => handleThumbnailClick(video)}
-      className="cursor-pointer"
-    >
-      <div className="bg-white rounded-xl shadow-md">
-        <img
-          src={video.submission.thumbnail}
-          alt={video.submission.title}
-          className="w-full h-full object-cover rounded-t-lg"
-        />
-        <div className="p-4">
-          <p className="text-3xl font-semibold text-black">{video.submission.title}</p>
+    // <div
+    //   key={video.postId}
+    //   onClick={() => handleThumbnailClick(video)}
+    //   className="cursor-pointer"
+    // >
+    //   <div className="bg-white rounded-xl shadow-md">
+    //     <img
+    //       src={video.submission.thumbnail}
+    //       alt={video.submission.title}
+    //       className="w-full h-full object-cover rounded-t-lg"
+    //     />
+    //     <div className="p-4">
+    //       <p className="text-3xl font-semibold text-black">{video.submission.title}</p>
           
-          {/* Display the creator's profile picture, user handle, like count, and comment count */}
-          <div className="flex items-center mt-2">
-            <img
-              src={video.creator.pic}
-              alt={video.creator.name}
-              className="w-8 h-8 rounded-full mr-2"
-            />
-            <p className="text-sm text-gray-600">{video.creator.handle}</p>
-            {/* <span className="text-sm text-gray-400 mx-2">|</span> */}
+    //       {/* Display the creator's profile picture, user handle, like count, and comment count */}
+    //       <div className="flex items-center mt-2">
+    //         <img
+    //           src={video.creator.pic}
+    //           alt={video.creator.name}
+    //           className="w-8 h-8 rounded-full mr-2"
+    //         />
+    //         <p className="text-sm text-gray-600">{video.creator.handle}</p>
+    //         {/* <span className="text-sm text-gray-400 mx-2">|</span> */}
             
-          </div>
-        </div>
-      </div>
-    </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+    <VideoThumbnail key={video.postId} video={video} onClick={handleThumbnailClick} />
   ))}
 </div>
 
